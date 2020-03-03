@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>debounce | log log log</title>
+    <meta name="description" content="一份涵盖大部分前端程序员所需要掌握的核心知识">
+    
+    
+    <link rel="preload" href="/log-log-log/assets/css/0.styles.ad851c91.css" as="style"><link rel="preload" href="/log-log-log/assets/js/app.811a0369.js" as="script"><link rel="preload" href="/log-log-log/assets/js/2.e2281415.js" as="script"><link rel="preload" href="/log-log-log/assets/js/92.33829aa9.js" as="script"><link rel="prefetch" href="/log-log-log/assets/js/10.315da3a5.js"><link rel="prefetch" href="/log-log-log/assets/js/100.645543db.js"><link rel="prefetch" href="/log-log-log/assets/js/101.45c8b0ca.js"><link rel="prefetch" href="/log-log-log/assets/js/102.375cd773.js"><link rel="prefetch" href="/log-log-log/assets/js/103.5c4e5390.js"><link rel="prefetch" href="/log-log-log/assets/js/104.6341bcf6.js"><link rel="prefetch" href="/log-log-log/assets/js/105.be7cbc45.js"><link rel="prefetch" href="/log-log-log/assets/js/106.9c8007c4.js"><link rel="prefetch" href="/log-log-log/assets/js/107.91771076.js"><link rel="prefetch" href="/log-log-log/assets/js/108.e7aa2a8d.js"><link rel="prefetch" href="/log-log-log/assets/js/109.42ff4f08.js"><link rel="prefetch" href="/log-log-log/assets/js/11.164f1ebd.js"><link rel="prefetch" href="/log-log-log/assets/js/110.ca5eb1db.js"><link rel="prefetch" href="/log-log-log/assets/js/111.a3fb40f3.js"><link rel="prefetch" href="/log-log-log/assets/js/112.db04edd0.js"><link rel="prefetch" href="/log-log-log/assets/js/113.5a27ad91.js"><link rel="prefetch" href="/log-log-log/assets/js/114.2c4f94dd.js"><link rel="prefetch" href="/log-log-log/assets/js/115.0c59d108.js"><link rel="prefetch" href="/log-log-log/assets/js/116.f08db94d.js"><link rel="prefetch" href="/log-log-log/assets/js/117.b6ea30e4.js"><link rel="prefetch" href="/log-log-log/assets/js/118.7e9f4d8b.js"><link rel="prefetch" href="/log-log-log/assets/js/119.bbc8ce6d.js"><link rel="prefetch" href="/log-log-log/assets/js/12.1fd18aba.js"><link rel="prefetch" href="/log-log-log/assets/js/120.72b28ad2.js"><link rel="prefetch" href="/log-log-log/assets/js/121.67fb8738.js"><link rel="prefetch" href="/log-log-log/assets/js/122.f5a82266.js"><link rel="prefetch" href="/log-log-log/assets/js/123.d3282452.js"><link rel="prefetch" href="/log-log-log/assets/js/124.18c7b5df.js"><link rel="prefetch" href="/log-log-log/assets/js/125.14da1a1c.js"><link rel="prefetch" href="/log-log-log/assets/js/126.2e7b12be.js"><link rel="prefetch" href="/log-log-log/assets/js/127.adbb9b95.js"><link rel="prefetch" href="/log-log-log/assets/js/128.c96df89c.js"><link rel="prefetch" href="/log-log-log/assets/js/129.4446e237.js"><link rel="prefetch" href="/log-log-log/assets/js/13.7af75369.js"><link rel="prefetch" href="/log-log-log/assets/js/130.17f72410.js"><link rel="prefetch" href="/log-log-log/assets/js/131.889ff43c.js"><link rel="prefetch" href="/log-log-log/assets/js/132.da084fe4.js"><link rel="prefetch" href="/log-log-log/assets/js/133.d938e7da.js"><link rel="prefetch" href="/log-log-log/assets/js/134.f0f2c289.js"><link rel="prefetch" href="/log-log-log/assets/js/135.0f227317.js"><link rel="prefetch" href="/log-log-log/assets/js/136.c2b56072.js"><link rel="prefetch" href="/log-log-log/assets/js/137.f2b3909c.js"><link rel="prefetch" href="/log-log-log/assets/js/138.c700f9dd.js"><link rel="prefetch" href="/log-log-log/assets/js/139.9f0fdbf1.js"><link rel="prefetch" href="/log-log-log/assets/js/14.e8993800.js"><link rel="prefetch" href="/log-log-log/assets/js/140.61c15652.js"><link rel="prefetch" href="/log-log-log/assets/js/141.3af1e935.js"><link rel="prefetch" href="/log-log-log/assets/js/142.ed147173.js"><link rel="prefetch" href="/log-log-log/assets/js/143.28ab8013.js"><link rel="prefetch" href="/log-log-log/assets/js/144.f9e1d5c3.js"><link rel="prefetch" href="/log-log-log/assets/js/145.af15621a.js"><link rel="prefetch" href="/log-log-log/assets/js/146.cfb03680.js"><link rel="prefetch" href="/log-log-log/assets/js/147.0ada44a2.js"><link rel="prefetch" href="/log-log-log/assets/js/148.01348e75.js"><link rel="prefetch" href="/log-log-log/assets/js/149.ef1e7c4d.js"><link rel="prefetch" href="/log-log-log/assets/js/15.df21c529.js"><link rel="prefetch" href="/log-log-log/assets/js/150.4ab9de98.js"><link rel="prefetch" href="/log-log-log/assets/js/151.19b6b9f8.js"><link rel="prefetch" href="/log-log-log/assets/js/152.7667b911.js"><link rel="prefetch" href="/log-log-log/assets/js/153.d502fd85.js"><link rel="prefetch" href="/log-log-log/assets/js/154.9ace8a95.js"><link rel="prefetch" href="/log-log-log/assets/js/155.63a0d3a0.js"><link rel="prefetch" href="/log-log-log/assets/js/156.50351fba.js"><link rel="prefetch" href="/log-log-log/assets/js/157.717c0c91.js"><link rel="prefetch" href="/log-log-log/assets/js/158.a7c2ac52.js"><link rel="prefetch" href="/log-log-log/assets/js/159.b38d45e8.js"><link rel="prefetch" href="/log-log-log/assets/js/16.d370c873.js"><link rel="prefetch" href="/log-log-log/assets/js/160.fae275dc.js"><link rel="prefetch" href="/log-log-log/assets/js/161.4c503c0e.js"><link rel="prefetch" href="/log-log-log/assets/js/162.4a72d532.js"><link rel="prefetch" href="/log-log-log/assets/js/163.626952c1.js"><link rel="prefetch" href="/log-log-log/assets/js/164.f2fd476d.js"><link rel="prefetch" href="/log-log-log/assets/js/165.e52b5762.js"><link rel="prefetch" href="/log-log-log/assets/js/166.37454086.js"><link rel="prefetch" href="/log-log-log/assets/js/167.3d5997c6.js"><link rel="prefetch" href="/log-log-log/assets/js/168.6d501847.js"><link rel="prefetch" href="/log-log-log/assets/js/169.778846f7.js"><link rel="prefetch" href="/log-log-log/assets/js/17.1213e58a.js"><link rel="prefetch" href="/log-log-log/assets/js/18.d00715cc.js"><link rel="prefetch" href="/log-log-log/assets/js/19.3431478a.js"><link rel="prefetch" href="/log-log-log/assets/js/20.63dec5cc.js"><link rel="prefetch" href="/log-log-log/assets/js/21.87e2ab8d.js"><link rel="prefetch" href="/log-log-log/assets/js/22.e185deca.js"><link rel="prefetch" href="/log-log-log/assets/js/23.b1ddf4f7.js"><link rel="prefetch" href="/log-log-log/assets/js/24.adf037f1.js"><link rel="prefetch" href="/log-log-log/assets/js/25.49fb69be.js"><link rel="prefetch" href="/log-log-log/assets/js/26.efa709e1.js"><link rel="prefetch" href="/log-log-log/assets/js/27.b8b7d4fb.js"><link rel="prefetch" href="/log-log-log/assets/js/28.fcd7a0ce.js"><link rel="prefetch" href="/log-log-log/assets/js/29.f598e546.js"><link rel="prefetch" href="/log-log-log/assets/js/3.a79a19bf.js"><link rel="prefetch" href="/log-log-log/assets/js/30.46fecd56.js"><link rel="prefetch" href="/log-log-log/assets/js/31.0b778504.js"><link rel="prefetch" href="/log-log-log/assets/js/32.294e9c4e.js"><link rel="prefetch" href="/log-log-log/assets/js/33.deb11574.js"><link rel="prefetch" href="/log-log-log/assets/js/34.aae6ac55.js"><link rel="prefetch" href="/log-log-log/assets/js/35.44da63ac.js"><link rel="prefetch" href="/log-log-log/assets/js/36.249d890f.js"><link rel="prefetch" href="/log-log-log/assets/js/37.53891f73.js"><link rel="prefetch" href="/log-log-log/assets/js/38.dfa1fed8.js"><link rel="prefetch" href="/log-log-log/assets/js/39.4c7f4145.js"><link rel="prefetch" href="/log-log-log/assets/js/4.25cb8050.js"><link rel="prefetch" href="/log-log-log/assets/js/40.9fe6f272.js"><link rel="prefetch" href="/log-log-log/assets/js/41.77762fe7.js"><link rel="prefetch" href="/log-log-log/assets/js/42.119c2da1.js"><link rel="prefetch" href="/log-log-log/assets/js/43.bd1ae85c.js"><link rel="prefetch" href="/log-log-log/assets/js/44.e6ae08a4.js"><link rel="prefetch" href="/log-log-log/assets/js/45.55f0fa45.js"><link rel="prefetch" href="/log-log-log/assets/js/46.8d9a3b46.js"><link rel="prefetch" href="/log-log-log/assets/js/47.aebbc980.js"><link rel="prefetch" href="/log-log-log/assets/js/48.069f01ec.js"><link rel="prefetch" href="/log-log-log/assets/js/49.5e8e5b47.js"><link rel="prefetch" href="/log-log-log/assets/js/5.72426d7f.js"><link rel="prefetch" href="/log-log-log/assets/js/50.3fed4ff5.js"><link rel="prefetch" href="/log-log-log/assets/js/51.56d7ce66.js"><link rel="prefetch" href="/log-log-log/assets/js/52.3d71585c.js"><link rel="prefetch" href="/log-log-log/assets/js/53.201843ec.js"><link rel="prefetch" href="/log-log-log/assets/js/54.9352c2d8.js"><link rel="prefetch" href="/log-log-log/assets/js/55.6821e8d1.js"><link rel="prefetch" href="/log-log-log/assets/js/56.981e7deb.js"><link rel="prefetch" href="/log-log-log/assets/js/57.eccf6d77.js"><link rel="prefetch" href="/log-log-log/assets/js/58.90353a86.js"><link rel="prefetch" href="/log-log-log/assets/js/59.2f03ae5f.js"><link rel="prefetch" href="/log-log-log/assets/js/6.9301d901.js"><link rel="prefetch" href="/log-log-log/assets/js/60.f9f6d9af.js"><link rel="prefetch" href="/log-log-log/assets/js/61.218a31aa.js"><link rel="prefetch" href="/log-log-log/assets/js/62.973d0161.js"><link rel="prefetch" href="/log-log-log/assets/js/63.32e49001.js"><link rel="prefetch" href="/log-log-log/assets/js/64.d9dead86.js"><link rel="prefetch" href="/log-log-log/assets/js/65.92b96aaa.js"><link rel="prefetch" href="/log-log-log/assets/js/66.552d47cd.js"><link rel="prefetch" href="/log-log-log/assets/js/67.d0748060.js"><link rel="prefetch" href="/log-log-log/assets/js/68.34b5575b.js"><link rel="prefetch" href="/log-log-log/assets/js/69.e1f032eb.js"><link rel="prefetch" href="/log-log-log/assets/js/7.822c5dc1.js"><link rel="prefetch" href="/log-log-log/assets/js/70.a19decb5.js"><link rel="prefetch" href="/log-log-log/assets/js/71.34dd1adc.js"><link rel="prefetch" href="/log-log-log/assets/js/72.ff611d9a.js"><link rel="prefetch" href="/log-log-log/assets/js/73.8b68860e.js"><link rel="prefetch" href="/log-log-log/assets/js/74.4501d362.js"><link rel="prefetch" href="/log-log-log/assets/js/75.479d873e.js"><link rel="prefetch" href="/log-log-log/assets/js/76.9f28f6b4.js"><link rel="prefetch" href="/log-log-log/assets/js/77.4db10796.js"><link rel="prefetch" href="/log-log-log/assets/js/78.4298d734.js"><link rel="prefetch" href="/log-log-log/assets/js/79.5eb7c978.js"><link rel="prefetch" href="/log-log-log/assets/js/8.086a4bf2.js"><link rel="prefetch" href="/log-log-log/assets/js/80.4d91df43.js"><link rel="prefetch" href="/log-log-log/assets/js/81.abeb99f6.js"><link rel="prefetch" href="/log-log-log/assets/js/82.566bd562.js"><link rel="prefetch" href="/log-log-log/assets/js/83.56292798.js"><link rel="prefetch" href="/log-log-log/assets/js/84.7ff9fa7e.js"><link rel="prefetch" href="/log-log-log/assets/js/85.5a77a85c.js"><link rel="prefetch" href="/log-log-log/assets/js/86.8c06f870.js"><link rel="prefetch" href="/log-log-log/assets/js/87.9042bc3a.js"><link rel="prefetch" href="/log-log-log/assets/js/88.3a618b85.js"><link rel="prefetch" href="/log-log-log/assets/js/89.b57418a8.js"><link rel="prefetch" href="/log-log-log/assets/js/9.adad0f18.js"><link rel="prefetch" href="/log-log-log/assets/js/90.bbc832fe.js"><link rel="prefetch" href="/log-log-log/assets/js/91.9fa06087.js"><link rel="prefetch" href="/log-log-log/assets/js/93.b1af2972.js"><link rel="prefetch" href="/log-log-log/assets/js/94.ea114343.js"><link rel="prefetch" href="/log-log-log/assets/js/95.e3b1e8c0.js"><link rel="prefetch" href="/log-log-log/assets/js/96.13245f0c.js"><link rel="prefetch" href="/log-log-log/assets/js/97.1c8c0b54.js"><link rel="prefetch" href="/log-log-log/assets/js/98.5222f8d6.js"><link rel="prefetch" href="/log-log-log/assets/js/99.03fa8f8e.js">
+    <link rel="stylesheet" href="/log-log-log/assets/css/0.styles.ad851c91.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/log-log-log/" class="home-link router-link-active"><!----> <span class="site-name">log log log</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/limichange/log-log-log" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/limichange/log-log-log" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/log-log-log/" class="sidebar-link">log log log</a></li><li><a href="/log-log-log/questions.html" class="sidebar-link">Questions</a></li><li><a href="/log-log-log/todo.html" class="sidebar-link">todo</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Axios</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTTP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NPM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Typescript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Babel</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Books</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Browser</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Concept</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Css</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Express</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Graphql</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Gulp</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Javascript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/log-log-log/javascript/" class="sidebar-link">js</a></li><li><a href="/log-log-log/javascript/ XHR 和 fetch.html" class="sidebar-link">XHR 和 fetch</a></li><li><a href="/log-log-log/javascript/Currying 柯里化.html" class="sidebar-link">柯里化</a></li><li><a href="/log-log-log/javascript/EventEmitter.html" class="sidebar-link">EventEmitter</a></li><li><a href="/log-log-log/javascript/JSON.stringify和JSON.parse的实现.html" class="sidebar-link">JSON.stringify 和 JSON.parse 的实现</a></li><li><a href="/log-log-log/javascript/JS获取DOM元素的方法.html" class="sidebar-link">JS 获取 DOM 元素的方法</a></li><li><a href="/log-log-log/javascript/Proxy.html" class="sidebar-link">Proxy</a></li><li><a href="/log-log-log/javascript/Reflect.html" class="sidebar-link">Reflect</a></li><li><a href="/log-log-log/javascript/RegExp.html" class="sidebar-link">RegExp</a></li><li><a href="/log-log-log/javascript/Service Worker.html" class="sidebar-link">Service Worker</a></li><li><a href="/log-log-log/javascript/Set、WeakSet、Map及WeakMap.html" class="sidebar-link">Set、WeakSet、Map 及 WeakMap</a></li><li><a href="/log-log-log/javascript/Symbol.html" class="sidebar-link">Symbol</a></li><li><a href="/log-log-log/javascript/apply&amp;call&amp;bind.html" class="sidebar-link">apply、call、bind</a></li><li><a href="/log-log-log/javascript/array.html" class="sidebar-link">array</a></li><li><a href="/log-log-log/javascript/async await.html" class="sidebar-link">async/await</a></li><li><a href="/log-log-log/javascript/class.html" class="sidebar-link">class</a></li><li><a href="/log-log-log/javascript/clone.html" class="sidebar-link">clone</a></li><li><a href="/log-log-log/javascript/debounce.html" class="active sidebar-link">debounce</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/log-log-log/javascript/debounce.html#_30secondsofcode" class="sidebar-link">30secondsofcode</a></li><li class="sidebar-sub-header"><a href="/log-log-log/javascript/debounce.html#codeburst-版本" class="sidebar-link">codeburst 版本</a></li><li class="sidebar-sub-header"><a href="/log-log-log/javascript/debounce.html#vue3-版本" class="sidebar-link">vue3 版本</a></li><li class="sidebar-sub-header"><a href="/log-log-log/javascript/debounce.html#lodash-版本" class="sidebar-link">lodash 版本</a></li></ul></li><li><a href="/log-log-log/javascript/decorator.html" class="sidebar-link">decorator</a></li><li><a href="/log-log-log/javascript/deepClone.html" class="sidebar-link">deepClone</a></li><li><a href="/log-log-log/javascript/document.ready 和 window.onload .html" class="sidebar-link">document.ready 和 window.onload</a></li><li><a href="/log-log-log/javascript/dom.html" class="sidebar-link">dom</a></li><li><a href="/log-log-log/javascript/event.html" class="sidebar-link">event</a></li><li><a href="/log-log-log/javascript/function.html" class="sidebar-link">function</a></li><li><a href="/log-log-log/javascript/instanceof.html" class="sidebar-link">instanceof</a></li><li><a href="/log-log-log/javascript/js对象数据结构底层实现原理.html" class="sidebar-link">js 对象数据结构底层实现原理</a></li><li><a href="/log-log-log/javascript/new的过程.html" class="sidebar-link">new 的过程</a></li><li><a href="/log-log-log/javascript/prototype.html" class="sidebar-link">prototype</a></li><li><a href="/log-log-log/javascript/questions.html" class="sidebar-link">questions</a></li><li><a href="/log-log-log/javascript/random.html" class="sidebar-link">random</a></li><li><a href="/log-log-log/javascript/slice与splice.html" class="sidebar-link">slice 与 splice</a></li><li><a href="/log-log-log/javascript/substr和substring的区别.html" class="sidebar-link">substr 和 substring 的区别</a></li><li><a href="/log-log-log/javascript/throttle.html" class="sidebar-link">throttle</a></li><li><a href="/log-log-log/javascript/use strict.html" class="sidebar-link">strict</a></li><li><a href="/log-log-log/javascript/virtual dom.html" class="sidebar-link">virtual dom</a></li><li><a href="/log-log-log/javascript/一行代码实现一个简单的模板字符串替换.html" class="sidebar-link">一行代码实现一个简单的模板字符串替换</a></li><li><a href="/log-log-log/javascript/可伸缩布局方案.html" class="sidebar-link">可伸缩布局方案</a></li><li><a href="/log-log-log/javascript/如何遍历一个dom树.html" class="sidebar-link">如何遍历一个 dom 树</a></li><li><a href="/log-log-log/javascript/实现一个原生的 ajax 封装.html" class="sidebar-link">实现一个原生的 ajax 封装</a></li><li><a href="/log-log-log/javascript/实现一个斐波那契数列.html" class="sidebar-link">实现一个斐波那契数列</a></li><li><a href="/log-log-log/javascript/微任务、宏任务与Event-Loop.html" class="sidebar-link">微任务、宏任务与 Event-Loop</a></li><li><a href="/log-log-log/javascript/懒加载.html" class="sidebar-link">懒加载</a></li><li><a href="/log-log-log/javascript/懒加载和预加载.html" class="sidebar-link">懒加载和预加载</a></li><li><a href="/log-log-log/javascript/类型判断.html" class="sidebar-link">类型判断</a></li><li><a href="/log-log-log/javascript/路由 history hash.html" class="sidebar-link">路由 history hash</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Promise</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Koa</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Leetcode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Markdown</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Network</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Others</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Redux</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Scss</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Secure</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tool</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vuex</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Website</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="debounce"><a href="#debounce" class="header-anchor">#</a> debounce</h1> <h2 id="_30secondsofcode"><a href="#_30secondsofcode" class="header-anchor">#</a> 30secondsofcode</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> ms <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> timeoutId
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeoutId<span class="token punctuation">)</span>
+    timeoutId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">,</span> ms<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="codeburst-版本"><a href="#codeburst-版本" class="header-anchor">#</a> codeburst 版本</h2> <p><a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf" target="_blank" rel="noopener noreferrer">地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> inDebounce
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">const</span> args <span class="token operator">=</span> arguments
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>inDebounce<span class="token punctuation">)</span>
+    inDebounce <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="vue3-版本"><a href="#vue3-版本" class="header-anchor">#</a> vue3 版本</h2> <p><a href="https://github.com/vuejs/vue-next/blob/32499b16e7d88b0c6f53c6a0e0998e4a40d1c1f3/packages/template-explorer/src/index.ts#L212" target="_blank" rel="noopener noreferrer">地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> debounce<span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args<span class="token punctuation">:</span> <span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">any</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  fn<span class="token punctuation">:</span> <span class="token constant">T</span><span class="token punctuation">,</span>
+  delay<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">300</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token constant">T</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> prevTimer<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args<span class="token punctuation">:</span> <span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prevTimer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>prevTimer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    prevTimer <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+      prevTimer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>简化后</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay <span class="token operator">=</span> <span class="token number">300</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> prevTimer <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prevTimer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>prevTimer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    prevTimer <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+      prevTimer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="lodash-版本"><a href="#lodash-版本" class="header-anchor">#</a> lodash 版本</h2> <p><a href="https://unpkg.com/lodash.debounce@4.0.8/index.js" target="_blank" rel="noopener noreferrer">地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/**
+ * lodash (Custom Build) &lt;https://lodash.com/&gt;
+ * Build: `lodash modularize exports=&quot;npm&quot; -o ./`
+ * Copyright jQuery Foundation and other contributors &lt;https://jquery.org/&gt;
+ * Released under MIT license &lt;https://lodash.com/license&gt;
+ * Based on Underscore.js 1.8.3 &lt;http://underscorejs.org/LICENSE&gt;
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters &amp; Editors
+ */</span>
+
+<span class="token comment">/** Used as the `TypeError` message for &quot;Functions&quot; methods. */</span>
+<span class="token keyword">var</span> <span class="token constant">FUNC_ERROR_TEXT</span> <span class="token operator">=</span> <span class="token string">'Expected a function'</span>
+
+<span class="token comment">/** Used as references for various `Number` constants. */</span>
+<span class="token keyword">var</span> <span class="token constant">NAN</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token number">0</span>
+
+<span class="token comment">/** `Object#toString` result references. */</span>
+<span class="token keyword">var</span> symbolTag <span class="token operator">=</span> <span class="token string">'[object Symbol]'</span>
+
+<span class="token comment">/** Used to match leading and trailing whitespace. */</span>
+<span class="token keyword">var</span> reTrim <span class="token operator">=</span> <span class="token regex">/^\s+|\s+$/g</span>
+
+<span class="token comment">/** Used to detect bad signed hexadecimal string values. */</span>
+<span class="token keyword">var</span> reIsBadHex <span class="token operator">=</span> <span class="token regex">/^[-+]0x[0-9a-f]+$/i</span>
+
+<span class="token comment">/** Used to detect binary string values. */</span>
+<span class="token keyword">var</span> reIsBinary <span class="token operator">=</span> <span class="token regex">/^0b[01]+$/i</span>
+
+<span class="token comment">/** Used to detect octal string values. */</span>
+<span class="token keyword">var</span> reIsOctal <span class="token operator">=</span> <span class="token regex">/^0o[0-7]+$/i</span>
+
+<span class="token comment">/** Built-in method references without a dependency on `root`. */</span>
+<span class="token keyword">var</span> freeParseInt <span class="token operator">=</span> parseInt
+
+<span class="token comment">/** Detect free variable `global` from Node.js. */</span>
+<span class="token keyword">var</span> freeGlobal <span class="token operator">=</span>
+  <span class="token keyword">typeof</span> global <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> global <span class="token operator">&amp;&amp;</span> global<span class="token punctuation">.</span>Object <span class="token operator">===</span> Object <span class="token operator">&amp;&amp;</span> global
+
+<span class="token comment">/** Detect free variable `self`. */</span>
+<span class="token keyword">var</span> freeSelf <span class="token operator">=</span> <span class="token keyword">typeof</span> self <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> self <span class="token operator">&amp;&amp;</span> self<span class="token punctuation">.</span>Object <span class="token operator">===</span> Object <span class="token operator">&amp;&amp;</span> self
+
+<span class="token comment">/** Used as a reference to the global object. */</span>
+<span class="token keyword">var</span> root <span class="token operator">=</span> freeGlobal <span class="token operator">||</span> freeSelf <span class="token operator">||</span> <span class="token function">Function</span><span class="token punctuation">(</span><span class="token string">'return this'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">/** Used for built-in method references. */</span>
+<span class="token keyword">var</span> objectProto <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype
+
+<span class="token comment">/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */</span>
+<span class="token keyword">var</span> objectToString <span class="token operator">=</span> objectProto<span class="token punctuation">.</span>toString
+
+<span class="token comment">/* Built-in method references for those with the same name as other `lodash` methods. */</span>
+<span class="token keyword">var</span> nativeMax <span class="token operator">=</span> Math<span class="token punctuation">.</span>max<span class="token punctuation">,</span>
+  nativeMin <span class="token operator">=</span> Math<span class="token punctuation">.</span>min
+
+<span class="token comment">/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // =&gt; Logs the number of milliseconds it took for the deferred invocation.
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">now</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> root<span class="token punctuation">.</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> lastArgs<span class="token punctuation">,</span>
+    lastThis<span class="token punctuation">,</span>
+    maxWait<span class="token punctuation">,</span>
+    result<span class="token punctuation">,</span>
+    timerId<span class="token punctuation">,</span>
+    lastCallTime<span class="token punctuation">,</span>
+    lastInvokeTime <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    leading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    maxing <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    trailing <span class="token operator">=</span> <span class="token boolean">true</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> func <span class="token operator">!=</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token constant">FUNC_ERROR_TEXT</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  wait <span class="token operator">=</span> <span class="token function">toNumber</span><span class="token punctuation">(</span>wait<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isObject</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    leading <span class="token operator">=</span> <span class="token operator">!</span><span class="token operator">!</span>options<span class="token punctuation">.</span>leading
+    maxing <span class="token operator">=</span> <span class="token string">'maxWait'</span> <span class="token keyword">in</span> options
+    maxWait <span class="token operator">=</span> maxing <span class="token operator">?</span> <span class="token function">nativeMax</span><span class="token punctuation">(</span><span class="token function">toNumber</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>maxWait<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span> <span class="token punctuation">:</span> maxWait
+    trailing <span class="token operator">=</span> <span class="token string">'trailing'</span> <span class="token keyword">in</span> options <span class="token operator">?</span> <span class="token operator">!</span><span class="token operator">!</span>options<span class="token punctuation">.</span>trailing <span class="token punctuation">:</span> trailing
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">invokeFunc</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> args <span class="token operator">=</span> lastArgs<span class="token punctuation">,</span>
+      thisArg <span class="token operator">=</span> lastThis
+
+    lastArgs <span class="token operator">=</span> lastThis <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    lastInvokeTime <span class="token operator">=</span> time
+    result <span class="token operator">=</span> <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">leadingEdge</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Reset any `maxWait` timer.</span>
+    lastInvokeTime <span class="token operator">=</span> time
+    <span class="token comment">// Start the timer for the trailing edge.</span>
+    timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>timerExpired<span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+    <span class="token comment">// Invoke the leading edge.</span>
+    <span class="token keyword">return</span> leading <span class="token operator">?</span> <span class="token function">invokeFunc</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token punctuation">:</span> result
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">remainingWait</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> timeSinceLastCall <span class="token operator">=</span> time <span class="token operator">-</span> lastCallTime<span class="token punctuation">,</span>
+      timeSinceLastInvoke <span class="token operator">=</span> time <span class="token operator">-</span> lastInvokeTime<span class="token punctuation">,</span>
+      result <span class="token operator">=</span> wait <span class="token operator">-</span> timeSinceLastCall
+
+    <span class="token keyword">return</span> maxing <span class="token operator">?</span> <span class="token function">nativeMin</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> maxWait <span class="token operator">-</span> timeSinceLastInvoke<span class="token punctuation">)</span> <span class="token punctuation">:</span> result
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">shouldInvoke</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> timeSinceLastCall <span class="token operator">=</span> time <span class="token operator">-</span> lastCallTime<span class="token punctuation">,</span>
+      timeSinceLastInvoke <span class="token operator">=</span> time <span class="token operator">-</span> lastInvokeTime
+
+    <span class="token comment">// Either this is the first call, activity has stopped and we're at the</span>
+    <span class="token comment">// trailing edge, the system time has gone backwards and we're treating</span>
+    <span class="token comment">// it as the trailing edge, or we've hit the `maxWait` limit.</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      lastCallTime <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">||</span>
+      timeSinceLastCall <span class="token operator">&gt;=</span> wait <span class="token operator">||</span>
+      timeSinceLastCall <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>
+      <span class="token punctuation">(</span>maxing <span class="token operator">&amp;&amp;</span> timeSinceLastInvoke <span class="token operator">&gt;=</span> maxWait<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">timerExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">shouldInvoke</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">trailingEdge</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// Restart the timer.</span>
+    timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>timerExpired<span class="token punctuation">,</span> <span class="token function">remainingWait</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">trailingEdge</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    timerId <span class="token operator">=</span> <span class="token keyword">undefined</span>
+
+    <span class="token comment">// Only invoke if we have `lastArgs` which means `func` has been</span>
+    <span class="token comment">// debounced at least once.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>trailing <span class="token operator">&amp;&amp;</span> lastArgs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">invokeFunc</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    lastArgs <span class="token operator">=</span> lastThis <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timerId <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timerId<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    lastInvokeTime <span class="token operator">=</span> <span class="token number">0</span>
+    lastArgs <span class="token operator">=</span> lastCallTime <span class="token operator">=</span> lastThis <span class="token operator">=</span> timerId <span class="token operator">=</span> <span class="token keyword">undefined</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> timerId <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> result <span class="token punctuation">:</span> <span class="token function">trailingEdge</span><span class="token punctuation">(</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">debounced</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      isInvoking <span class="token operator">=</span> <span class="token function">shouldInvoke</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+
+    lastArgs <span class="token operator">=</span> arguments
+    lastThis <span class="token operator">=</span> <span class="token keyword">this</span>
+    lastCallTime <span class="token operator">=</span> time
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isInvoking<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>timerId <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">leadingEdge</span><span class="token punctuation">(</span>lastCallTime<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>maxing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle invocations in a tight loop.</span>
+        timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>timerExpired<span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token function">invokeFunc</span><span class="token punctuation">(</span>lastCallTime<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timerId <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>timerExpired<span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+  debounced<span class="token punctuation">.</span>cancel <span class="token operator">=</span> cancel
+  debounced<span class="token punctuation">.</span>flush <span class="token operator">=</span> flush
+  <span class="token keyword">return</span> debounced
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // =&gt; true
+ *
+ * _.isObject([1, 2, 3]);
+ * // =&gt; true
+ *
+ * _.isObject(_.noop);
+ * // =&gt; true
+ *
+ * _.isObject(null);
+ * // =&gt; false
+ */</span>
+<span class="token keyword">function</span> <span class="token function">isObject</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> type <span class="token operator">=</span> <span class="token keyword">typeof</span> value
+  <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span>value <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">||</span> type <span class="token operator">==</span> <span class="token string">'function'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of &quot;object&quot;.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // =&gt; true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // =&gt; true
+ *
+ * _.isObjectLike(_.noop);
+ * // =&gt; false
+ *
+ * _.isObjectLike(null);
+ * // =&gt; false
+ */</span>
+<span class="token keyword">function</span> <span class="token function">isObjectLike</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span>value <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">'object'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // =&gt; true
+ *
+ * _.isSymbol('abc');
+ * // =&gt; false
+ */</span>
+<span class="token keyword">function</span> <span class="token function">isSymbol</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">'symbol'</span> <span class="token operator">||</span>
+    <span class="token punctuation">(</span><span class="token function">isObjectLike</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">objectToString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">==</span> symbolTag<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // =&gt; 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // =&gt; 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // =&gt; Infinity
+ *
+ * _.toNumber('3.2');
+ * // =&gt; 3.2
+ */</span>
+<span class="token keyword">function</span> <span class="token function">toNumber</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isSymbol</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token constant">NAN</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isObject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> other <span class="token operator">=</span> <span class="token keyword">typeof</span> value<span class="token punctuation">.</span>valueOf <span class="token operator">==</span> <span class="token string">'function'</span> <span class="token operator">?</span> value<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> value
+    value <span class="token operator">=</span> <span class="token function">isObject</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span> <span class="token operator">?</span> other <span class="token operator">+</span> <span class="token string">''</span> <span class="token punctuation">:</span> other
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">!=</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> value <span class="token punctuation">:</span> <span class="token operator">+</span>value
+  <span class="token punctuation">}</span>
+  value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reTrim<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> isBinary <span class="token operator">=</span> reIsBinary<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> isBinary <span class="token operator">||</span> reIsOctal<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token operator">?</span> <span class="token function">freeParseInt</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> isBinary <span class="token operator">?</span> <span class="token number">2</span> <span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">)</span>
+    <span class="token punctuation">:</span> reIsBadHex<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token operator">?</span> <span class="token constant">NAN</span>
+    <span class="token punctuation">:</span> <span class="token operator">+</span>value
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> debounce
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/limichange/log-log-log/edit/master/docs/javascript/debounce.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/3/2020, 12:48:56 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/log-log-log/javascript/clone.html" class="prev">clone</a></span> <span class="next"><a href="/log-log-log/javascript/decorator.html">decorator</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/log-log-log/assets/js/app.811a0369.js" defer></script><script src="/log-log-log/assets/js/2.e2281415.js" defer></script><script src="/log-log-log/assets/js/92.33829aa9.js" defer></script>
+  </body>
+</html>
